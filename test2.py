@@ -1,5 +1,6 @@
 import aiohttp
 import asyncio
+import random
 
 
 async def fetch(session: aiohttp.ClientSession, url: str, delay: int):
@@ -31,9 +32,9 @@ async def main(data):
     
 if __name__ == "__main__":
     data = [
-        ("http://example.com", 8),
-        ("http://example.org", 3),
-        ("http://example.net", 1),
+        ("http://example.com", random.randint(1, 10)),
+        ("http://example.org", random.randint(1, 10)),
+        ("http://example.net", random.randint(1, 10)),
     ] * 2
 
     asyncio.run(main(data))
